@@ -1,0 +1,18 @@
++ Matching Specific String
+	Regex_Pattern = r'hackerrank'	# Do not delete 'r'.
+
++ Matching Anything But a Newline
+	regex_pattern = r"^[^\n]{3}\.[^\n]{3}\.[^\n]{3}\.[^\n]{3}$"	# Do not delete 'r'.
+
++ Matching Digits & Non-Digit Characters
+	Regex_Pattern = r"\d\d\D\d\d\D\d\d\d\d"	# Do not delete 'r'.
+
++ Matching Whitespace & Non-Whitespace Character
+	Regex_Pattern = r"\S\S\s\S\S\s\S\S"	# Do not delete 'r'.
+
++ Matching Word & Non-Word Character
+	Regex_Pattern = r"[\w]{3}\W[\w]{10}\W[\w]{3}"	# Do not delete 'r'.
+
++ Matching Start & End
+	Regex_Pattern = r"^\d[\w]{4}\.$"	# Do not delete 'r'.
+
