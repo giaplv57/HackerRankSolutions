@@ -1,0 +1,8 @@
+Matching Word Boundaries:
+	+ Regex_Pattern = r'\b[aeiouAEIOU][a-zA-Z]*\b'	# Do not delete 'r'.
+
+Capturing & Non-Capturing Groups:
+	+ Regex_Pattern = r'(ok){3,}'	# Do not delete 'r'.
+
+Alternative Matching:
+	+ Regex_Pattern = r'^(Mr\.|Mrs\.|Ms\.|Dr\.|Er\.|)[a-zA-Z]+$'	# Do not delete 'r'.
