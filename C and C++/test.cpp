@@ -1,4 +1,3 @@
-// #include <cmath>
 #include <cstdio>
 #include <vector>
 #include <iostream>
@@ -25,6 +24,11 @@ class tagTree{
 		tagTree(tag* root, tag* mostRecentTag){
 			this->root = root;
 			this->mostRecentTag = mostRecentTag;
+		}
+		void addTag(tag* newTag){
+			this->mostRecentTag->childrenTags.push_back(newTag);
+			newTag->parentTag = this->mostRecentTag;
+			this->mostRecentTag = newTag;
 		}
 };
 
@@ -61,31 +65,34 @@ void parse(string data, tag* currentTag){
 	for (const auto &p : attributes) {
 	    currentTag->attributes.push_back(make_pair(p.second.at(0), p.second.at(1)));
 	}
-} 
-
-
+}
 
 int main() {
 	// tag* node = new tag();
-	// string data = "<tag4 name = \"Name4\" text = \"Super\"><tlk >";
+	// string data = "<tag4 name = \"Name4\" text = \"Super\" val123 = \"122\"><tlk >";
 	// parse(data, node);
 
-    /* Enter your code here. Read input from STDIN. Print output to STDOUT */  
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */
 	int N, Q;
 	cin >> N >> Q;
 	string data;
-	cin >> data;
+	getline(cin, data);
 	tag rootTag;
 	parse(data, &rootTag);
 	tagTree tree(&rootTag, &rootTag);
-	for (int i=0; i<N; i++){
-		cin >> data;
+
+	for (int i = 0; i < N-1; i++){
+
+		getline(cin, data);
+//		cout << data << endl;
 		if (data[0] == '<' && data[1] != '/'){
 			tag newTag;
 			parse(data, &newTag);
+			tree.addTag(&newTag);
 		}else{
 			//close tag
 		}
 	}
     return 0;
 }
+//-std=c++0x
