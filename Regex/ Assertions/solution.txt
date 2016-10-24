@@ -1,0 +1,11 @@
++ Positive Lookahead:
+	$Regex_Pattern = 'o(?=oo)';
+	
++ Negative Lookahead
+	$Regex_Pattern = '(.)(?!\1)';
+
++ Positive Lookbehind
+	$Regex_Pattern = '(?<=[13579])\d';
+
++ Negative Lookbehind
+	$Regex_Pattern = '(?<![aeiuoAEIUO]).';
