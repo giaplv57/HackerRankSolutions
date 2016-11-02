@@ -1,0 +1,33 @@
++ 'Awk' - 3
+	awk '{average=($2+$3+$4)/3; 
+    if(average<50) grade="FAIL";
+    else if(average>=50 && average<60) grade="C";
+    else if(average>=60 && average<80) grade="B";
+    else grade="A";
+    print $1,$2,$3,$4,":",grade;}'
++ 'Awk' - 4
+	awk '{ORS=NR%2?";":"\n";print;}'
++ 'Grep' #1
+	grep -w "the"
++ 'Grep' #2
+	grep -iw "the"
++ 'Grep' #3
+	grep -viw "that"
++ 'Grep' - A
+	grep -Piw "((the)|(that)|(then)|(those))"
++ 'Grep' - B
+	grep -P '([0-9]) ?\1'
++ 'Sed' command #1
+	sed 's/\bthe\b/this/'
++ 'Sed' command #2
+	sed 's/\bthy\b/your/gI'
++ 'Sed' command #3
+	sed 's|\b\(thy\)\b|\{\1\}|gI'
++ 'Sed' command #4
+	sed 's_.\{15\}\(.*\)_**** **** **** \1_'
++ 'Sed' command #5
+	sed 's_\([0-9]\{4\}\) \([0-9]\{4\}\) \([0-9]\{4\}\) \([0-9]\{4\}\)_\4 \3 \2 \1_'
++ 'Awk' - 1
+	awk '{if(!$4) print "Not all scores are available for",$1;}'
++ 'Awk' - 2
+	awk '{status=($2>=50 && $3>=50 && $4>=50)?"Pass":"Fail"; print $1,":",status;}'
